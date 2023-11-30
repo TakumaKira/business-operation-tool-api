@@ -21,7 +21,7 @@ This self-coding challenge, crafted with the assistance of ChatGPT-4, aims to re
    - Integrate `graphene-mongo` for MongoDB interactions.
 
 2. External API Integration:
-   - Integrate with three external mock APIs: Fake Store API, JSON Placeholder, and DummyJSON.
+   - Integrate with three external mock APIs: [Fake Store API](https://fakestoreapi.com/), [JSON Placeholder](https://jsonplaceholder.typicode.com/), and [DummyJSON](https://dummyjson.com/).
    - Understand and utilize different endpoints from these APIs for various data needs (e.g., products, user data, posts).
 
 3. MongoDB Database:
