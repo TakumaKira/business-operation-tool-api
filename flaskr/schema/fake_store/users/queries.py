@@ -9,5 +9,5 @@ class FakeStoreUserQuery(graphene.ObjectType):
     fake_store_users = graphene.List(FakeStoreUserType)
 
     def resolve_fake_store_users(self, info):
-        fetch_and_store_data(f"{BASE_URL}/users", FakeStoreUserModel)
+        fetch_and_store_data(f"{BASE_URL}/users", FakeStoreUserModel, lambda data: data)
         return list(FakeStoreUserModel.objects.all())

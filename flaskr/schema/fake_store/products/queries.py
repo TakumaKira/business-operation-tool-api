@@ -9,5 +9,5 @@ class FakeStoreProductQuery(graphene.ObjectType):
     fake_store_products = graphene.List(FakeStoreProductType)
 
     def resolve_fake_store_products(self, info):
-        fetch_and_store_data(f"{BASE_URL}/products", FakeStoreProductModel)
+        fetch_and_store_data(f"{BASE_URL}/products", FakeStoreProductModel, lambda data: data)
         return list(FakeStoreProductModel.objects.all())
