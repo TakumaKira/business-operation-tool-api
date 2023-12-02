@@ -3,6 +3,7 @@ from mongoengine.fields import (
   DictField,
 )
 
-class FakeStoreProduct(Document):
+
+class FakeStoreProductModel(Document):
   meta = {"collection": "fakestoreproduct"}
   data = DictField()

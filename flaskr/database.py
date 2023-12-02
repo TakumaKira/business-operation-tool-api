@@ -1,13 +1,13 @@
 from mongoengine import connect
 import mongomock
 
-from .models import FakeStoreProduct
+from .schema.fake_store.products.model import FakeStoreProductModel
 
 connect("business-operation-tool", host="mongodb://localhost", mongo_client_class=mongomock.MongoClient)
 
 
 def init_db():
-  fake_store_product_1 = FakeStoreProduct(data={
+  fake_store_product_1 = FakeStoreProductModel(data={
     "id": 1,
     "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
     "price": 109.95,
@@ -21,7 +21,7 @@ def init_db():
   })
   fake_store_product_1.save()
 
-  fake_store_product_2 = FakeStoreProduct(data={
+  fake_store_product_2 = FakeStoreProductModel(data={
     "id": 2,
     "title": "Mens Casual Premium Slim Fit T-Shirts ",
     "price": 22.3,
@@ -35,7 +35,7 @@ def init_db():
   })
   fake_store_product_2.save()
 
-  fake_store_product_3 = FakeStoreProduct(data={
+  fake_store_product_3 = FakeStoreProductModel(data={
     "id": 3,
     "title": "Mens Cotton Jacket",
     "price": 55.99,

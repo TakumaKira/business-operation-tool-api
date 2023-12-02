@@ -1,9 +1,7 @@
 import graphene
 
-from .models import FakeStoreProduct as FakeStoreProductModel
 
-
-class FakeStoreProduct(graphene.ObjectType):
+class FakeStoreProductType(graphene.ObjectType):
     title = graphene.String()
     price = graphene.Float()
     description = graphene.String()
@@ -28,13 +26,3 @@ class FakeStoreProduct(graphene.ObjectType):
 
     def resolve_rating(self, info):
         return self.data.get('rating', None)
-
-
-class Query(graphene.ObjectType):
-    fake_store_products = graphene.List(FakeStoreProduct, description='Products from Fake Store API')
-
-    def resolve_fake_store_products(self, info):
-        return list(FakeStoreProductModel.objects.all())
-
-
-schema = graphene.Schema(query=Query)
