@@ -321,6 +321,32 @@ files = [
 pymongo = ">=3.4,<5.0"
 
 [[package]]
+name = "mongomock"
+version = "4.1.2"
+description = "Fake pymongo stub for testing simple MongoDB-dependent code"
+optional = false
+python-versions = "*"
+files = [
+    {file = "mongomock-4.1.2-py2.py3-none-any.whl", hash = "sha256:08a24938a05c80c69b6b8b19a09888d38d8c6e7328547f94d46cadb7f47209f2"},
+    {file = "mongomock-4.1.2.tar.gz", hash = "sha256:f06cd62afb8ae3ef63ba31349abd220a657ef0dd4f0243a29587c5213f931b7d"},
+]
+
+[package.dependencies]
+packaging = "*"
+sentinels = "*"
+
+[[package]]
+name = "packaging"
+version = "23.2"
+description = "Core utilities for Python packages"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "packaging-23.2-py3-none-any.whl", hash = "sha256:8c491190033a9af7e1d931d0b5dacc2ef47509b34dd0de67ed209b5203fc88c7"},
+    {file = "packaging-23.2.tar.gz", hash = "sha256:048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"},
+]
+
+[[package]]
 name = "promise"
 version = "2.3"
 description = "Promises/A+ implementation for Python"
@@ -449,6 +475,32 @@ files = [
 ]
 
 [[package]]
+name = "sentinels"
+version = "1.0.0"
+description = "Various objects to denote special meanings in python"
+optional = false
+python-versions = "*"
+files = [
+    {file = "sentinels-1.0.0.tar.gz", hash = "sha256:7be0704d7fe1925e397e92d18669ace2f619c92b5d4eb21a89f31e026f9ff4b1"},
+]
+
+[[package]]
+name = "setuptools"
+version = "69.0.2"
+description = "Easily download, build, install, upgrade, and uninstall Python packages"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "setuptools-69.0.2-py3-none-any.whl", hash = "sha256:1e8fdff6797d3865f37397be788a4e3cba233608e9b509382a2777d25ebde7f2"},
+    {file = "setuptools-69.0.2.tar.gz", hash = "sha256:735896e78a4742605974de002ac60562d286fa8051a7e2299445e8e8fbb01aa6"},
+]
+
+[package.extras]
+docs = ["furo", "jaraco.packaging (>=9.3)", "jaraco.tidelift (>=1.4)", "pygments-github-lexers (==0.0.5)", "rst.linker (>=1.9)", "sphinx (<7.2.5)", "sphinx (>=3.5)", "sphinx-favicon", "sphinx-inline-tabs", "sphinx-lint", "sphinx-notfound-page (>=1,<2)", "sphinx-reredirects", "sphinxcontrib-towncrier"]
+testing = ["build[virtualenv]", "filelock (>=3.4.0)", "flake8-2020", "ini2toml[lite] (>=0.9)", "jaraco.develop (>=7.21)", "jaraco.envs (>=2.2)", "jaraco.path (>=3.2.0)", "pip (>=19.1)", "pytest (>=6)", "pytest-black (>=0.3.7)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=2.2)", "pytest-mypy (>=0.9.1)", "pytest-perf", "pytest-ruff", "pytest-timeout", "pytest-xdist", "tomli-w (>=1.0.0)", "virtualenv (>=13.0.0)", "wheel"]
+testing-integration = ["build[virtualenv] (>=1.0.3)", "filelock (>=3.4.0)", "jaraco.envs (>=2.2)", "jaraco.path (>=3.2.0)", "packaging (>=23.1)", "pytest", "pytest-enabler", "pytest-xdist", "tomli", "virtualenv (>=13.0.0)", "wheel"]
+
+[[package]]
 name = "singledispatch"
 version = "4.1.0"
 description = "Backport functools.singledispatch to older Pythons."
@@ -494,4 +546,4 @@ watchdog = ["watchdog (>=2.3)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "e77e2b47476c0982cd7efb2d9e8212ac6d33eca396c68da6f3d4e391a28bfb7a"
+content-hash = "532196aa9a1cb2940a854c5b14134cc489c0252d3edc9c88794121d69575384a"

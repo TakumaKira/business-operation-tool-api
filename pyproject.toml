@@ -12,6 +12,10 @@ flask-graphql = "^2.0.1"
 graphene-mongo = {url = "https://github.com/graphql-python/graphene-mongo/archive/refs/tags/v0.1.17.tar.gz"}
 
 
+[tool.poetry.group.dev.dependencies]
+mongomock = "^4.1.2"
+setuptools = "^69.0.2"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
