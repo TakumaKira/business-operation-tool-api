@@ -2,6 +2,7 @@ import graphene
 
 
 class DummyJsonUserType(graphene.ObjectType):
+    id = graphene.ID()
     first_name = graphene.String()
     last_name = graphene.String()
     maiden_name = graphene.String()
@@ -28,6 +29,9 @@ class DummyJsonUserType(graphene.ObjectType):
     ein = graphene.String()
     ssn = graphene.String()
     user_agent = graphene.String()
+
+    def resolve_id(self, info):
+        return self.data.get('id', None)
 
     def resolve_first_name(self, info):
         return self.data.get('firstName', None)

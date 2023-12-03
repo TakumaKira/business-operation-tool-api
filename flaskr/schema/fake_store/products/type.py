@@ -2,12 +2,16 @@ import graphene
 
 
 class FakeStoreProductType(graphene.ObjectType):
+    id = graphene.ID()
     title = graphene.String()
     price = graphene.Float()
     description = graphene.String()
     category = graphene.String()
     image = graphene.String()
     rating = graphene.JSONString()  # Assuming rating is a nested object
+
+    def resolve_id(self, info):
+        return self.data.get('id', None)
 
     def resolve_title(self, info):
         return self.data.get('title', None)

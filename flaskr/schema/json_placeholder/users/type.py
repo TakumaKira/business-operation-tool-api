@@ -2,6 +2,7 @@ import graphene
 
 
 class JsonPlaceholderUserType(graphene.ObjectType):
+    id = graphene.ID()
     name = graphene.String()
     username = graphene.String()
     email = graphene.String()
@@ -9,6 +10,9 @@ class JsonPlaceholderUserType(graphene.ObjectType):
     phone = graphene.String()
     website = graphene.String()
     company = graphene.JSONString()
+
+    def resolve_id(self, info):
+        return self.data.get('id', None)
 
     def resolve_name(self, info):
         return self.data.get('name', None)

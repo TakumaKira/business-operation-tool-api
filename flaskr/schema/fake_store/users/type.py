@@ -2,12 +2,16 @@ import graphene
 
 
 class FakeStoreUserType(graphene.ObjectType):
+    id = graphene.ID()
     address = graphene.JSONString()  # Assuming rating is a nested object
     email = graphene.String()
     username = graphene.String()
     # password = graphene.String() # Should not retrieve password
     name = graphene.JSONString()  # Assuming rating is a nested object
     phone = graphene.String()
+
+    def resolve_id(self, info):
+        return self.data.get('id', None)
 
     def resolve_address(self, info):
         return self.data.get('address', None)
