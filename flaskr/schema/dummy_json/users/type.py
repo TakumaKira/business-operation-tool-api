@@ -10,7 +10,7 @@ class DummyJsonUserType(graphene.ObjectType):
     email = graphene.String()
     phone = graphene.String()
     username = graphene.String()
-    password = graphene.String()
+    # password = graphene.String() # Should not retrieve password
     birth_date = graphene.String()
     image = graphene.String()
     blood_group = graphene.String()
@@ -53,8 +53,8 @@ class DummyJsonUserType(graphene.ObjectType):
     def resolve_username(self, info):
         return self.data.get('username', None)
 
-    def resolve_password(self, info):
-        return self.data.get('password', None)
+    # def resolve_password(self, info):
+    #     return self.data.get('password', None)
 
     def resolve_birth_date(self, info):
         return self.data.get('birthDate', None)
