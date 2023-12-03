@@ -20,3 +20,6 @@ def fetch_and_store_data(api_endpoint: str, model_class: Type[Document], transfo
         else:
             print(f"Error fetching data: {response.status_code}, Response: {response.text}")
             return
+
+    else:
+        print(f"Already having data from {api_endpoint}")
