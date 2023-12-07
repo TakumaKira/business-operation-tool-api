@@ -7,7 +7,16 @@ from .model import JsonPlaceholderPhotoModel
 
 class JsonPlaceholderPhotoQuery(graphene.ObjectType):
     json_placeholder_photos = graphene.List(JsonPlaceholderPhotoType)
+    json_placeholder_photo_by_id = graphene.Field(JsonPlaceholderPhotoType, id=graphene.Int(required=True))
 
     def resolve_json_placeholder_photos(self, info):
-        fetch_and_store_data(f"{BASE_URL}/photos", JsonPlaceholderPhotoModel, lambda data: data)
+        _fetch_and_store_data()
         return list(JsonPlaceholderPhotoModel.objects.all())
+
+    def resolve_json_placeholder_photo_by_id(self, info, id):
+        _fetch_and_store_data()
+        return JsonPlaceholderPhotoModel.objects.filter(id=id).first()
+
+
+def _fetch_and_store_data():
+    fetch_and_store_data(f"{BASE_URL}/photos", JsonPlaceholderPhotoModel, lambda data: data)

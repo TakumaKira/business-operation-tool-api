@@ -7,7 +7,16 @@ from .model import JsonPlaceholderUserModel
 
 class JsonPlaceholderUserQuery(graphene.ObjectType):
     json_placeholder_users = graphene.List(JsonPlaceholderUserType)
+    json_placeholder_user_by_id = graphene.Field(JsonPlaceholderUserType, id=graphene.Int(required=True))
 
     def resolve_json_placeholder_users(self, info):
-        fetch_and_store_data(f"{BASE_URL}/users", JsonPlaceholderUserModel, lambda data: data)
+        _fetch_and_store_data()
         return list(JsonPlaceholderUserModel.objects.all())
+
+    def resolve_json_placeholder_user_by_id(self, info, id):
+        _fetch_and_store_data()
+        return JsonPlaceholderUserModel.objects.filter(id=id).first()
+
+
+def _fetch_and_store_data():
+    fetch_and_store_data(f"{BASE_URL}/users", JsonPlaceholderUserModel, lambda data: data)

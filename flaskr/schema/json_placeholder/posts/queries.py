@@ -7,7 +7,16 @@ from .model import JsonPlaceholderPostModel
 
 class JsonPlaceholderPostQuery(graphene.ObjectType):
     json_placeholder_posts = graphene.List(JsonPlaceholderPostType)
+    json_placeholder_post_by_id = graphene.Field(JsonPlaceholderPostType, id=graphene.Int(required=True))
 
     def resolve_json_placeholder_posts(self, info):
-        fetch_and_store_data(f"{BASE_URL}/posts", JsonPlaceholderPostModel, lambda data: data)
+        _fetch_and_store_data()
         return list(JsonPlaceholderPostModel.objects.all())
+
+    def resolve_json_placeholder_post_by_id(self, info, id):
+        _fetch_and_store_data()
+        return JsonPlaceholderPostModel.objects.filter(id=id).first()
+
+
+def _fetch_and_store_data():
+    fetch_and_store_data(f"{BASE_URL}/posts", JsonPlaceholderPostModel, lambda data: data)
