@@ -18,5 +18,7 @@ class JsonPlaceholderPhotoQuery(graphene.ObjectType):
         return JsonPlaceholderPhotoModel.objects.filter(id=id).first()
 
 
+URL = f"{BASE_URL}/photos"
+
 def _fetch_and_store_data():
-    fetch_and_store_data(f"{BASE_URL}/photos", JsonPlaceholderPhotoModel, lambda data: data)
+    fetch_and_store_data(URL, JsonPlaceholderPhotoModel, lambda data: data)

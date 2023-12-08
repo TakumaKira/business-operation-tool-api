@@ -18,5 +18,7 @@ class DummyJsonUserQuery(graphene.ObjectType):
         return DummyJsonUserModel.objects.filter(id=id).first()
 
 
+URL = f"{BASE_URL}/users"
+
 def _fetch_and_store_data():
-    fetch_and_store_data(f"{BASE_URL}/users", DummyJsonUserModel, lambda data: data.get('users'))
+    fetch_and_store_data(URL, DummyJsonUserModel, lambda data: data.get('users'))

@@ -18,5 +18,7 @@ class DummyJsonCommentQuery(graphene.ObjectType):
         return DummyJsonCommentModel.objects.filter(id=id).first()
 
 
+URL = f"{BASE_URL}/comments"
+
 def _fetch_and_store_data():
-    fetch_and_store_data(f"{BASE_URL}/comments", DummyJsonCommentModel, lambda data: data.get('comments'))
+    fetch_and_store_data(URL, DummyJsonCommentModel, lambda data: data.get('comments'))

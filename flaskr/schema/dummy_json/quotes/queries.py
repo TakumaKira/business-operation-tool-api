@@ -18,5 +18,7 @@ class DummyJsonQuoteQuery(graphene.ObjectType):
         return DummyJsonQuoteModel.objects.filter(id=id).first()
 
 
+URL = f"{BASE_URL}/quotes"
+
 def _fetch_and_store_data():
-    fetch_and_store_data(f"{BASE_URL}/quotes", DummyJsonQuoteModel, lambda data: data.get('quotes'))
+    fetch_and_store_data(URL, DummyJsonQuoteModel, lambda data: data.get('quotes'))

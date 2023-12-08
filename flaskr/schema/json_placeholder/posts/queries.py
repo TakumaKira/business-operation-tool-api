@@ -18,5 +18,7 @@ class JsonPlaceholderPostQuery(graphene.ObjectType):
         return JsonPlaceholderPostModel.objects.filter(id=id).first()
 
 
+URL = f"{BASE_URL}/posts"
+
 def _fetch_and_store_data():
-    fetch_and_store_data(f"{BASE_URL}/posts", JsonPlaceholderPostModel, lambda data: data)
+    fetch_and_store_data(URL, JsonPlaceholderPostModel, lambda data: data)

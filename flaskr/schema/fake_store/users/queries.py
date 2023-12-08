@@ -18,5 +18,7 @@ class FakeStoreUserQuery(graphene.ObjectType):
         return FakeStoreUserModel.objects.filter(id=id).first()
 
 
+URL = f"{BASE_URL}/users"
+
 def _fetch_and_store_data():
-    fetch_and_store_data(f"{BASE_URL}/users", FakeStoreUserModel, lambda data: data)
+    fetch_and_store_data(URL, FakeStoreUserModel, lambda data: data)

@@ -18,5 +18,7 @@ class DummyJsonPostQuery(graphene.ObjectType):
         return DummyJsonPostModel.objects.filter(id=id).first()
 
 
+URL = f"{BASE_URL}/posts"
+
 def _fetch_and_store_data():
-    fetch_and_store_data(f"{BASE_URL}/posts", DummyJsonPostModel, lambda data: data.get('posts'))
+    fetch_and_store_data(URL, DummyJsonPostModel, lambda data: data.get('posts'))

@@ -18,5 +18,7 @@ class FakeStoreCartQuery(graphene.ObjectType):
         return FakeStoreCartModel.objects.filter(id=id).first()
 
 
+URL = f"{BASE_URL}/carts"
+
 def _fetch_and_store_data():
-    fetch_and_store_data(f"{BASE_URL}/carts", FakeStoreCartModel, lambda data: data)
+    fetch_and_store_data(URL, FakeStoreCartModel, lambda data: data)

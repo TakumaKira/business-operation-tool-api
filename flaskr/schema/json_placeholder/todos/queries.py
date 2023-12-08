@@ -18,5 +18,7 @@ class JsonPlaceholderTodoQuery(graphene.ObjectType):
         return JsonPlaceholderTodoModel.objects.filter(id=id).first()
 
 
+URL = f"{BASE_URL}/todos"
+
 def _fetch_and_store_data():
-    fetch_and_store_data(f"{BASE_URL}/todos", JsonPlaceholderTodoModel, lambda data: data)
+    fetch_and_store_data(URL, JsonPlaceholderTodoModel, lambda data: data)

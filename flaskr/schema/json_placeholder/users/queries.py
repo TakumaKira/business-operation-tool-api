@@ -18,5 +18,7 @@ class JsonPlaceholderUserQuery(graphene.ObjectType):
         return JsonPlaceholderUserModel.objects.filter(id=id).first()
 
 
+URL = f"{BASE_URL}/users"
+
 def _fetch_and_store_data():
-    fetch_and_store_data(f"{BASE_URL}/users", JsonPlaceholderUserModel, lambda data: data)
+    fetch_and_store_data(URL, JsonPlaceholderUserModel, lambda data: data)

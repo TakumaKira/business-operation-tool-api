@@ -18,5 +18,7 @@ class JsonPlaceholderCommentQuery(graphene.ObjectType):
         return JsonPlaceholderCommentModel.objects.filter(id=id).first()
 
 
+URL = f"{BASE_URL}/comments"
+
 def _fetch_and_store_data():
-    fetch_and_store_data(f"{BASE_URL}/comments", JsonPlaceholderCommentModel, lambda data: data)
+    fetch_and_store_data(URL, JsonPlaceholderCommentModel, lambda data: data)

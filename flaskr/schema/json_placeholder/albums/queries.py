@@ -18,5 +18,7 @@ class JsonPlaceholderAlbumQuery(graphene.ObjectType):
         return JsonPlaceholderAlbumModel.objects.filter(id=id).first()
 
 
+URL = f"{BASE_URL}/albums"
+
 def _fetch_and_store_data():
-    fetch_and_store_data(f"{BASE_URL}/albums", JsonPlaceholderAlbumModel, lambda data: data)
+    fetch_and_store_data(URL, JsonPlaceholderAlbumModel, lambda data: data)

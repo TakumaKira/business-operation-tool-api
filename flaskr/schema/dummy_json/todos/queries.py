@@ -18,5 +18,7 @@ class DummyJsonTodoQuery(graphene.ObjectType):
         return DummyJsonTodoModel.objects.filter(id=id).first()
 
 
+URL = f"{BASE_URL}/todos"
+
 def _fetch_and_store_data():
-    fetch_and_store_data(f"{BASE_URL}/todos", DummyJsonTodoModel, lambda data: data.get('todos'))
+    fetch_and_store_data(URL, DummyJsonTodoModel, lambda data: data.get('todos'))

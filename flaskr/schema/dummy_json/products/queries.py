@@ -18,5 +18,7 @@ class DummyJsonProductQuery(graphene.ObjectType):
         return DummyJsonProductModel.objects.filter(id=id).first()
 
 
+URL = f"{BASE_URL}/products"
+
 def _fetch_and_store_data():
-    fetch_and_store_data(f"{BASE_URL}/products", DummyJsonProductModel, lambda data: data.get('products'))
+    fetch_and_store_data(URL, DummyJsonProductModel, lambda data: data.get('products'))

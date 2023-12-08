@@ -18,5 +18,7 @@ class DummyJsonCartQuery(graphene.ObjectType):
         return DummyJsonCartModel.objects.filter(id=id).first()
 
 
+URL = f"{BASE_URL}/carts"
+
 def _fetch_and_store_data():
-    fetch_and_store_data(f"{BASE_URL}/carts", DummyJsonCartModel, lambda data: data.get('carts'))
+    fetch_and_store_data(URL, DummyJsonCartModel, lambda data: data.get('carts'))
