@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "business-operation-tool-api"
+name = "flaskr"
 version = "0.1.0"
 description = ""
 authors = ["Takuma Kira <takuma@kirakiraworx.com>"]
@@ -7,7 +7,16 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
+flask = "^3.0.0"
+flask-graphql = "^2.0.1"
+graphene-mongo = {url = "https://github.com/graphql-python/graphene-mongo/archive/refs/tags/v0.1.17.tar.gz"}
+requests = "^2.31.0"
 
+
+[tool.poetry.group.dev.dependencies]
+mongomock = "^4.1.2"
+setuptools = "^69.0.2"
+pytest = "^7.4.3"
 
 [build-system]
 requires = ["poetry-core"]
