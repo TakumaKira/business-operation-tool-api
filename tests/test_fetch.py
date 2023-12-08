@@ -22,25 +22,25 @@ from flaskr.schema.json_placeholder.users.queries import URL as JSON_PLACEHOLDER
 
 def test_dummy_json_api_endpoint_validity():
     "Verify DummyJSON API endpoints"
-    assert requests.get(DUMMY_JSON_CARTS_URL, timeout=1).status_code == 200
-    assert requests.get(DUMMY_JSON_COMMENTS_URL, timeout=1).status_code == 200
-    assert requests.get(DUMMY_JSON_POSTS_URL, timeout=1).status_code == 200
-    assert requests.get(DUMMY_JSON_PRODUCTS_URL, timeout=1).status_code == 200
-    assert requests.get(DUMMY_JSON_QUOTES_URL, timeout=1).status_code == 200
-    assert requests.get(DUMMY_JSON_TODOS_URL, timeout=1).status_code == 200
-    assert requests.get(DUMMY_JSON_USERS_URL, timeout=1).status_code == 200
+    assert requests.head(DUMMY_JSON_CARTS_URL, timeout=1).status_code == 200
+    assert requests.head(DUMMY_JSON_COMMENTS_URL, timeout=1).status_code == 200
+    assert requests.head(DUMMY_JSON_POSTS_URL, timeout=1).status_code == 200
+    assert requests.head(DUMMY_JSON_PRODUCTS_URL, timeout=1).status_code == 200
+    assert requests.head(DUMMY_JSON_QUOTES_URL, timeout=1).status_code == 200
+    assert requests.head(DUMMY_JSON_TODOS_URL, timeout=1).status_code == 200
+    assert requests.head(DUMMY_JSON_USERS_URL, timeout=1).status_code == 200
 
 def test_fake_store_api_endpoint_validity():
     "Verify Fake Store API endpoints"
-    assert requests.get(FAKE_STORE_CARTS_URL, timeout=5).status_code == 200
-    assert requests.get(FAKE_STORE_PRODUCTS_URL, timeout=5).status_code == 200
-    assert requests.get(FAKE_STORE_USERS_URL, timeout=5).status_code == 200
+    assert requests.head(FAKE_STORE_CARTS_URL, timeout=5).status_code == 200
+    assert requests.head(FAKE_STORE_PRODUCTS_URL, timeout=5).status_code == 200
+    assert requests.head(FAKE_STORE_USERS_URL, timeout=5).status_code == 200
 
 def test_json_placeholder_api_endpoint_validity():
     "Verify JSON placeholder API endpoints"
-    assert requests.get(JSON_PLACEHOLDER_ALBUMS_URL, timeout=1).status_code == 200
-    assert requests.get(JSON_PLACEHOLDER_COMMENTS_URL, timeout=1).status_code == 200
-    assert requests.get(JSON_PLACEHOLDER_PHOTOS_URL, timeout=1).status_code == 200
-    assert requests.get(JSON_PLACEHOLDER_POSTS_URL, timeout=1).status_code == 200
-    assert requests.get(JSON_PLACEHOLDER_TODOS_URL, timeout=1).status_code == 200
-    assert requests.get(JSON_PLACEHOLDER_USERS_URL, timeout=1).status_code == 200
+    assert requests.head(JSON_PLACEHOLDER_ALBUMS_URL, timeout=1).status_code == 200
+    assert requests.head(JSON_PLACEHOLDER_COMMENTS_URL, timeout=1).status_code == 200
+    assert requests.head(JSON_PLACEHOLDER_PHOTOS_URL, timeout=1).status_code == 200
+    assert requests.head(JSON_PLACEHOLDER_POSTS_URL, timeout=1).status_code == 200
+    assert requests.head(JSON_PLACEHOLDER_TODOS_URL, timeout=1).status_code == 200
+    assert requests.head(JSON_PLACEHOLDER_USERS_URL, timeout=1).status_code == 200
