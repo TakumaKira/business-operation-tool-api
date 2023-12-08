@@ -60,14 +60,28 @@ This self-coding challenge, crafted with the assistance of ChatGPT-4, aims to re
 
 ## How to run
 
-To run this API server, run:
+Before running the server or tests, you need to setup:
 
 ```bash
 poetry install
-...
+```
+
+To properly get your terminal ready to run commands, you need to activate the environment:
+
+```bash
 poetry shell
-...
+```
+
+To run this API server, run:
+
+```bash
 flask --app flaskr run
+```
+
+To run tests, run:
+
+```bash
+pytest
 ```
 
 ## Acknowledgments
