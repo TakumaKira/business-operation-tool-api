@@ -8,6 +8,9 @@ class JsonPlaceholderCommentType(graphene.ObjectType):
     email = graphene.String()
     body = graphene.String()
 
+    def resolve_id(self, info):
+        return self.data.get('id', None)
+
     def resolve_post_id(self, info):
         return self.data.get('postId', None)
 

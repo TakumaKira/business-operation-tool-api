@@ -38,6 +38,9 @@ class DummyJsonProductType(graphene.ObjectType):
     def resolve_brand(self, info):
         return self.data.get('brand', None)
 
+    def resolve_category(self, info):
+        return self.data.get('category', None)
+
     def resolve_thumbnail(self, info):
         return self.data.get('thumbnail', None)
 
